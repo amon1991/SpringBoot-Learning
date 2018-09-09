@@ -1,0 +1,40 @@
+server:
+    port: 8080
+    context-path: #/dasheng/
+    sessionTimeout: 1800
+
+logging:
+    file: logs/log.txt
+    #path: #保存日志文件目录路径
+    #config: #日志配置文件,Spring Boot默认使用classpath路径下的日志配置文件,如:logback.xml
+    level:
+        tk.mybatis: DEBUG
+        #org.springframework.web: DEBUG #配置spring web日志级别
+
+spring:
+    datasource:
+        name: test
+        url: jdbc:mysql://127.0.0.1:3306/amontest?characterEncoding=utf8
+        username: root
+        password: 123456
+        # 使用druid数据源
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        filters: stat
+        maxActive: 100
+        initialSize: 1
+        maxWait: 60000
+        minIdle: 1
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
+    freemarker:
+        cache: false
+        request-context-attribute: request
+
+
