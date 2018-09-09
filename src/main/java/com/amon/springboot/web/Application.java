@@ -9,7 +9,9 @@ import org.springframework.web.socket.config.annotation.EnableWebSocket;
 
 /**
  * yaming.chen@siemens.com
- * Created by chenyaming on 2016/10/17.
+ *
+ * @author chenyaming
+ * @date 2016/10/17
  */
 @Controller
 @EnableWebMvc

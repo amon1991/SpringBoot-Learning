@@ -46,7 +46,9 @@ import java.util.Properties;
  * MyBatis基础配置
  *
  * yaming.chen@siemens.com
- * Created by chenyaming on 2016/10/17.
+ *
+ * @author chenyaming
+ * @date 2016/10/17
  */
 @Configuration
 @EnableTransactionManagement

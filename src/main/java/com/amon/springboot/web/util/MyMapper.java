@@ -27,9 +27,6 @@ package com.amon.springboot.web.util;
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.common.MySqlMapper;
 
-import java.util.List;
-import java.util.Map;
-
 /**
  * 继承自己的MyMapper
  *
@@ -39,23 +36,4 @@ import java.util.Map;
  * @date 2016/10/17
  */
 public interface MyMapper<T> extends Mapper<T>, MySqlMapper<T> {
-
-    /**
-     * datatables日志分页查询
-     * @return
-     */
-    List<T> selectForSearch(Map<String, Object> params);
-
-    /**
-     * 记录总行数
-     * @return
-     */
-    Integer iTotalRecords();
-
-    /**
-     * 搜索记录总行数
-     * @return
-     */
-    Integer iTotalDisplayRecords(Map<String, Object> params);
-
 }

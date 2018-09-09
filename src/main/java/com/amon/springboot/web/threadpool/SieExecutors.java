@@ -7,7 +7,9 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * yaming.chen@siemens.com
- * Created by chenyaming on 8/11/16.
+ *
+ * @author chenyaming
+ * @date 8/11/16
  */
 public final class SieExecutors {
 

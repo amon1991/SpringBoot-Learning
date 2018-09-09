@@ -3,7 +3,9 @@ package com.amon.springboot.web.enums;
 /**
  * 是否有效的枚举类
  * yaming.chen@siemens.com
- * Created by chenyaming on 2016/12/6.
+ *
+ * @author chenyaming
+ * @date 2016/12/6
  */
 public enum ActiveStatus {
 
