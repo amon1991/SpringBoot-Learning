@@ -6,6 +6,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * yaming.chen@siemens.com
@@ -21,26 +23,42 @@ public class UsersService {
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private UsersServiceB usersServiceB;
+
     /**
      * Save user
+     *
      * @param users
      * @return
      */
-    public boolean saveUser(Users users){
+    @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRED)
+    public boolean saveUser(Users users) {
 
-        if (null!=users){
+        try {
+            if (null != users) {
 
-            if (userMapper.insert(users)==1){
-                return true;
-            }else {
+                if (userMapper.insert(users) == 1) {
+                    usersServiceB.saveDefaultUser();
+                    return true;
+                } else {
+                    return false;
+                }
+
+            } else {
                 return false;
             }
+        }catch (Exception e){
 
-        }else {
-            return false;
+            e.getStackTrace();
+            logger.error(e.getMessage());
+            //return false;
+            throw new RuntimeException(e.getMessage());
+
         }
 
     }
+
 
 
 }
