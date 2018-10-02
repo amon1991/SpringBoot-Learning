@@ -138,6 +138,12 @@
             <scope>compile</scope>
         </dependency>
 
+        <!-- database auto migration tool-->
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>5.1.4</version>
+        </dependency>
 
     </dependencies>
 
@@ -153,6 +159,12 @@
                     <skipTests>true</skipTests>
                 </configuration>
             </plugin>-->
+
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>4.0.3</version>
+            </plugin>
 
             <!--Compiler setting-->
             <plugin>

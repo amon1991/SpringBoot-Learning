@@ -37,4 +37,8 @@ spring:
         cache: false
         request-context-attribute: request
 
+flyway:
+    baselineOnMigrate: true
+    out-of-order: true
+
 
